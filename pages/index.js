@@ -2,24 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import GetNHLTeams from "../components/allTeams"
 
 const inter = Inter({ subsets: ['latin'] })
 
-export async function getNHLRosterData() {
-  const res = await fetch('https://statsapi.web.nhl.com/api/v1/teams/')
-  return await res.json();
-}
-export async function getStaticProps() {
-  const nhlRosters = await getNHLRosterData();
-
-  return {
-    props: {
-      nhlRosters,
-    }
-  }
-}
-
-export default function Home({nhlRosters}) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -28,20 +15,12 @@ export default function Home({nhlRosters}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <div className={styles.content}>
-            <h2>
-              {nhlRosters.copyright}
-            </h2>
-            <ul>
-                {nhlRosters.teams.map((team => (
-                    <li key={team.id}>
-                        {team.name}
-                        <br/>
-                        {team.abbreviation}
-                    </li>
-                )))}
-            </ul>
+            <GetNHLTeams>
+
+            </GetNHLTeams>
         </div>
       </main>
     </>
