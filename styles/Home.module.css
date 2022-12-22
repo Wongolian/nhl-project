@@ -1,12 +1,20 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
+.something {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+}
 .description {
   display: inherit;
   justify-content: inherit;
@@ -46,11 +54,27 @@
   max-width: 100%;
 }
 
+.gridLanding {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+}
+
+.cardTeams {
+  padding: 1rem 1.2rem;
+  margin: 0.2rem 0.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 3px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+}
+
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
+  border: 3px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
 }
 
@@ -83,16 +107,9 @@
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
-  width: 480px;
-  height: 360px;
+  width: 400px;
+  height: 260px;
   margin-left: -400px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
 }
 
 .center::before,
@@ -104,53 +121,6 @@
   transform: translateZ(0);
 }
 
-.logo,
-.thirteen {
-  position: relative;
-}
-
-.thirteen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  padding: 25px 10px;
-  margin-left: 16px;
-  transform: translateZ(0);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0px 2px 8px -1px #0000001a;
-}
-
-.thirteen::before,
-.thirteen::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-}
-
-/* Conic Gradient Animation */
-.thirteen::before {
-  animation: 6s rotate linear infinite;
-  width: 200%;
-  height: 200%;
-  background: var(--tile-border);
-}
-
-/* Inner Square */
-.thirteen::after {
-  inset: 0;
-  padding: 1px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
-  background-clip: content-box;
-}
-
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -159,6 +129,14 @@
   }
 
   .card:hover span {
+    transform: translateX(4px);
+  }
+  .cardTeams:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .cardTeams:hover span {
     transform: translateX(4px);
   }
 }

@@ -2,9 +2,7 @@ import TeamList from '../../components/teams/TeamList'
 
 export default function Home({ teams }) {
     return (
-        <>
-            <TeamList teams={teams} />
-        </>
+        <TeamList teams={teams} />
     )
 }
 
