@@ -1,12 +1,10 @@
-import TeamItem from "../../components/TeamItem";
-
 const team = ({ team }) => {
     console.log(team)
     return (
-        <>
-            <h1>This is a Teams Dedicated Page</h1>
-            <h3>{team.copyright}</h3>
-        </>
+        <div>
+            <h1>{team.teams[0].name}</h1>
+            <h1>{team.teams[0].division.name}</h1>
+        </div>
     )
 
 }

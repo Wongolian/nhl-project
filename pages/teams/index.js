@@ -1,4 +1,4 @@
-import TeamList from '../../components/TeamList'
+import TeamList from '../../components/teams/TeamList'
 
 export default function Home({ teams }) {
     return (
