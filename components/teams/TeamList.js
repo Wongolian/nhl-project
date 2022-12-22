@@ -1,12 +1,15 @@
 import TeamItem from "./TeamItem";
+import TeamLogo from "./TeamLogo";
 const TeamList = ({ teams }) => {
     return (
-        <div>
-            <h1>Teams</h1>
-            {teams.teams.sort((a,b) => a.name.localeCompare(b.name)).map((team => (
-                <TeamItem key={team.id} team={ team } />
-            )))}
-        </div>
+        <>
+            <div>
+                <h1>Teams</h1>
+                {teams.teams.sort((a,b) => a.name.localeCompare(b.name)).map((team => (
+                    <TeamItem key={team.id} team={ team } />
+                )))}
+            </div>
+        </>
     )
 }
 
