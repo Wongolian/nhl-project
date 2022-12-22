@@ -33,7 +33,6 @@ export default function Home() {
             <Link
                 href="/teams/"
                 className={styles.card}
-                target="_blank"
                 rel="noopener noreferrer"
             >
                 <h2 className={inter.className}>
@@ -44,10 +43,9 @@ export default function Home() {
                 </p>
             </Link>
 
-            <a
+            <Link
                 href="/"
                 className={styles.card}
-                target="_blank"
                 rel="noopener noreferrer"
             >
                 <h2 className={inter.className}>
@@ -57,7 +55,7 @@ export default function Home() {
                     Find all the information about players here!
                     --- NOT CURRENTLY ACTIVE ---
                 </p>
-            </a>
+            </Link>
         </div>
     </>
   )
