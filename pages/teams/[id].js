@@ -8,8 +8,6 @@ const team = ({ team }) => {
     const teamStats = [team.teams[0].teamStats[0].splits[0]]
     const players = [team.teams[0].roster.roster]
 
-    console.log(teamStats)
-
     return (
         <>
         <div className={styles.something}>

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import PlayerHeadshot from "./PlayerHeadshot";
+import Link from 'next/link';
 
 const PlayerItem = ({ player }) => {
 
