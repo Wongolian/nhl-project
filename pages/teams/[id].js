@@ -5,23 +5,26 @@ import PlayerList from "../../components/players/PlayerList";
 const team = ({ team }) => {
     const teamID = team.teams[0].id
     const teamInfo = [team.teams[0]]
-    // const teamStats = [team.teams[0].teamStats]
+    const teamStats = [team.teams[0].teamStats[0].splits[0]]
     const players = [team.teams[0].roster.roster]
+
+    console.log(teamStats)
 
     return (
         <>
         <div className={styles.something}>
-            <h1>{teamInfo[0].name}</h1>
+            <span>
+                <h1>{teamInfo[0].name}</h1>
+                Games Played: {teamStats[0].stat.gamesPlayed} &nbsp;
+                Wins: {teamStats[0].stat.wins} &nbsp;
+                Losses: {teamStats[0].stat.losses} &nbsp;
+                OTL: {teamStats[0].stat.ot} &nbsp;
+                Points: {teamStats[0].stat.pts}
+            </span>
             <TeamLogo team={ teamID } />
-            {/*<h2>Current Record</h2>*/}
-            {/*<p>Games Played: {teamStats.splits[0].stat.gamesPlayed}*/}
-            {/*    Wins: {teamStats.splits[0].stat.wins}*/}
-            {/*    Losses: {teamStats.splits[0].stat.losses}*/}
-            {/*    OT: {teamStats.splits[0].stat.ot}*/}
-            {/*    Points: {teamStats.splits[0].stat.pts}*/}
-            {/*</p>*/}
+
         </div>
-        <PlayerList players={ players } />
+            <PlayerList players={ players } />
         </>
     )
 

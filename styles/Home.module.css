@@ -60,6 +60,23 @@
   width: var(--max-width);
   max-width: 100%;
 }
+.gridTeamPlayers {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(75%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+}
+.playerTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+
+.playerTable th {
+  padding: 1rem 1rem;
+  background: grey;
+  text-align: left;
+}
 
 .cardTeams {
   padding: 1rem 1.2rem;
@@ -94,6 +111,14 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
+}
+
+.centerPhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
 }
 
 .center {

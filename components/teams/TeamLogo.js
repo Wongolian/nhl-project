@@ -9,6 +9,7 @@ const TeamLogo = ({ team }) => {
         <Image
             loader={myLoader}
             src={team.toString()}
+            alt=""
             width={250}
             height={250}
         />
