@@ -1,4 +1,4 @@
-import Link from 'next/Link'
+import Link from "next/link";
 import PlayerHeadshot from "./PlayerHeadshot";
 
 const PlayerItem = ({ player }) => {
@@ -19,7 +19,7 @@ const PlayerItem = ({ player }) => {
                     </tr>
                 </tbody>
             </table>
-    </Link>
+        </Link>
         </div>
     )
 }
