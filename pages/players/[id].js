@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 const player = ({ player, playerStats}) => {
 
+    console.log("---------PLAYER STATS----------")
+    console.log(playerStats)
+    console.log("---------PLAYER INFO----------")
+    console.log(player)
+
     return (
         <>
         <div className={styles.centerPhoto}>
@@ -20,9 +25,8 @@ const player = ({ player, playerStats}) => {
     )
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
 
-    console.log(context)
 
     const resStats = await fetch(`https://statsapi.web.nhl.com/api/v1/people/${context.params.id}/
     stats?stats=statsSingleSeason`)
@@ -31,25 +35,10 @@ export const getStaticProps = async (context) => {
     const player = await res.json()
 
     return {
-        props: {
+        props:{
             player,
             playerStats
         }
-    }
-}
-
-export const getStaticPaths = async () => {
-
-    // const res = await fetch(`https://statsapi.web.nhl.com/api/v1/people/8478420/`)
-    // const player = await res.json()
-
-    return {
-        paths: [
-            { params: {
-                id: "8478420"
-                }}
-        ],
-        fallback: false
     }
 }
 
