@@ -7,10 +7,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 const player = ({ player, playerStats}) => {
 
-    console.log("---------PLAYER STATS----------")
-    console.log(playerStats)
-    console.log("---------PLAYER INFO----------")
-    console.log(player)
+    // console.log("---------PLAYER STATS----------")
+    // console.log(playerStats)
+    // console.log("---------PLAYER INFO----------")
+    // console.log(player)
 
     return (
         <>
